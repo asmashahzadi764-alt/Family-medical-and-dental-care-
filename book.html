@@ -340,7 +340,7 @@
 </nav>
 <script>
   // Change this if your backend runs somewhere other than localhost:5000
-  const API_BASE_URL = 'http://localhost:5000';
+  const API_BASE_URL = 'https://fmdc-backend-v7gu.onrender.com';
 
   const appointmentForm = document.getElementById('appointmentForm');
   const feedbackBox = document.getElementById('bookingFeedback');
@@ -356,7 +356,7 @@
     } else {
       feedbackBox.classList.add('bg-error-container', 'text-error');
     }
-    feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    feedbackBox.scrollIntoView?.({ behavior: 'smooth', block: 'nearest' });
   }
 
   appointmentForm.addEventListener('submit', async function (e) {
@@ -405,14 +405,18 @@
   });
 
   // Scroll-reveal: fade + rise elements into view as the user scrolls.
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('reveal-visible'));
+  }
 </script>
 </body></html>
