@@ -9,8 +9,26 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// Only these origins are allowed to call this API. Add more via the
+// ALLOWED_ORIGINS env var (comma-separated) if you ever add another
+// domain (e.g. a custom domain on top of the Vercel one).
+const defaultOrigins = [
+  'https://family-medical-and-dental-care.vercel.app',
+  'http://localhost:5500',
+  'http://127.0.0.1:5500'
+];
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())
+  : defaultOrigins;
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow tools with no Origin header (curl, Postman, server-to-server).
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error(`Origin ${origin} is not allowed by CORS`));
+  }
+}));
 app.use(express.json());
 
 // Initialize Database (creates db/clinic-data.json and seeds it on first run)
