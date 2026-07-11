@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Family Medical And Dental Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#3D6B5C",
+                      "surface-bright": "#F5F7F3",
+                      "surface-container-high": "#E3E9E1",
+                      "on-surface-variant": "#4B564F",
+                      "on-primary-container": "#F5F7F3",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#DCE3DA",
+                      "primary-container": "#1F4B3F",
+                      "tertiary-fixed-dim": "#b5c8df",
+                      "surface-container-low": "#EFF3ED",
+                      "outline": "#7A8580",
+                      "on-tertiary-fixed": "#091d2e",
+                      "surface-tint": "#1F4B3F",
+                      "tertiary-container": "#64768a",
+                      "primary-fixed": "#D9E8E1",
+                      "on-secondary-fixed-variant": "#1F4B3F",
+                      "inverse-on-surface": "#eff1f3",
+                      "background": "#F5F7F3",
+                      "primary-fixed-dim": "#8FB6A8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#36485b",
+                      "inverse-primary": "#8FB6A8",
+                      "surface": "#F5F7F3",
+                      "on-tertiary-container": "#fdfcff",
+                      "on-primary-fixed": "#0C231C",
+                      "surface-variant": "#DCE3DA",
+                      "on-secondary-container": "#1F4B3F",
+                      "outline-variant": "#C8D1C5",
+                      "error": "#ba1a1a",
+                      "tertiary": "#4c5e71",
+                      "secondary-fixed": "#E8EEE7",
+                      "primary": "#1F4B3F",
+                      "secondary-fixed-dim": "#96d3bd",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-fixed": "#d1e4fb",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#163A30",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#E8EEE7",
+                      "secondary-container": "#DCE9E1",
+                      "on-surface": "#1B2420",
+                      "on-background": "#1B2420",
+                      "inverse-surface": "#2d3133",
+                      "on-secondary-fixed": "#0C231C",
+                      "accent": "#C1791A",
+                      "on-accent": "#ffffff",
+                      "accent-container": "#F3E0C4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "stack-sm": "4px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "stack-md": "12px",
+                      "stack-lg": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "display": ["Fraunces"],
+                      "headline-md": ["Fraunces"],
+                      "headline-lg": ["Fraunces"],
+                      "caption": ["Inter"],
+                      "headline-lg-mobile": ["Fraunces"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .service-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background-color: rgba(245, 247, 243, 0.8);
+        }
+        .btn-book-cta {
+            background-color: #C1791A;
+            color: #ffffff;
+            transition: filter 0.2s ease, transform 0.15s ease;
+        }
+        .btn-book-cta:hover { filter: brightness(1.08); }
+        .btn-book-cta:active { transform: scale(0.96); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface shadow-sm dark:shadow-none glass-header">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="dentistry">dentistry</span>
+<h1 class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Family Medical And Dental Care</h1>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="index.html">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary hover:text-secondary transition-colors font-label-md text-label-md" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="about.html">About</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="contact.html">Contact</a>
+<button onclick="window.location='book.html'" class="btn-book-cta px-6 py-2 rounded-full font-label-md active:scale-95">Book Appointment</button>
+</nav>
+</header>
+<main class="pt-32 pb-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="space-y-stack-lg">
+<div class="inline-flex items-center gap-base bg-secondary-fixed text-on-secondary-fixed px-4 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+<span class="text-label-md font-label-md">Honest Care, Healthy Smiles</span>
+</div>
+<h2 class="font-display text-display lg:text-[56px] leading-tight text-primary">Comprehensive Dental &amp; Medical Services</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        At Family Medical And Dental Care, we combine high-tech dentistry with a warm, clinical touch. From routine checkups to specialized restorative care, your family's health is our priority in Multan.
+                    </p>
+</div>
+<div class="relative rounded-xl overflow-hidden h-[400px] shadow-lg group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A clean, brightly lit modern dental clinic interior with state-of-the-art equipment. The scene features a comfortable dental chair in a soft blue color, polished surfaces, and professional medical tools neatly organized. The lighting is soft and clinical, evoking a sense of hygiene and safety. The overall atmosphere is professional, serene, and patient-focused, reflecting a high-standard healthcare facility in Multan." style="background-image: url('assets/services dental.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="mb-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg border-b border-outline-variant pb-8">
+<div>
+<h3 class="font-display text-headline-lg text-on-surface">Our Expertise</h3>
+<p class="text-on-surface-variant mt-2">Personalized treatment plans tailored to your specific needs.</p>
+</div>
+<div class="mt-4 md:mt-0">
+<span class="text-label-md font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="clinical_notes">clinical_notes</span>
+                        CLINICALLY PROVEN METHODS
+                    </span>
+</div>
+</div>
+<div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Cards are rendered here by JS from GET /api/v1/services. -->
+<!-- This loading placeholder is replaced as soon as data arrives. -->
+<div class="col-span-full text-center py-12 text-on-surface-variant">Loading services…</div>
+</div>
+</section>
+
+<!-- Service Detail Modal -->
+<div id="serviceDetailModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4" role="dialog" aria-modal="true">
+<div class="w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden">
+<div id="serviceDetailHeader" class="p-8 bg-primary text-white relative">
+<button id="closeServiceDetailModal" class="absolute top-4 right-4 text-white/80 hover:text-white">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<div class="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center mb-4">
+<span id="serviceDetailIcon" class="material-symbols-outlined text-3xl"></span>
+</div>
+<span id="serviceDetailBadge" class="hidden text-[10px] tracking-widest font-bold uppercase text-accent-container mb-1 block"></span>
+<h3 id="serviceDetailTitle" class="font-display text-headline-md font-bold"></h3>
+</div>
+<div class="p-8">
+<p id="serviceDetailDescription" class="text-on-surface-variant text-body-lg mb-8"></p>
+<div class="flex flex-col sm:flex-row gap-3">
+<button onclick="window.location='book.html'" class="btn-book-cta flex-1 py-3 rounded-full font-bold text-center">Book This Service</button>
+<button id="closeServiceDetailModalSecondary" class="flex-1 py-3 rounded-full font-bold border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">Close</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Style Feature Section -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-24">
+<div class="md:col-span-2 bg-surface-container-high rounded-2xl p-stack-lg flex flex-col justify-center">
+<h3 class="font-display text-headline-lg text-primary mb-4">State-of-the-Art Multan Clinic</h3>
+<p class="text-on-surface-variant">Located conveniently at Loha Market Rd, our facility is equipped with modern sterilization and diagnostic tools to ensure the highest safety standards for our patients.</p>
+</div>
+<div class="md:col-span-1 rounded-2xl overflow-hidden min-h-[200px]">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional close-up of a dentist in Multan performing a precise dental procedure using a surgical microscope. The focus is on the steady hands and the medical-grade instruments, illuminated by bright focused clinical lights. The dentist wears a clean white coat and protective gear, symbolizing precision and high-tech care. Soft bokeh background of a modern clinic." style="background-image: url('assets/treatment 3.jpg')"></div>
+</div>
+<div class="md:col-span-1 bg-secondary text-on-secondary rounded-2xl p-stack-lg flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-5xl mb-2" data-icon="schedule" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<p class="font-bold">Mon-Sat</p>
+<p class="text-sm">10AM-2PM, 5PM-9PM</p>
+<div class="mt-4 pt-4 border-t border-secondary-fixed/30 w-full">
+<p class="text-xs uppercase tracking-widest opacity-80">Quick Support</p>
+<p class="font-display font-bold">+92 3XX XXXXXXX</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto bg-surface-container-high border-t border-outline-variant">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="dentistry">dentistry</span>
+<span class="font-display text-headline-md font-bold text-on-surface">Family Care</span>
+</div>
+<p class="text-on-surface-variant text-body-md font-body-md">
+                © 2026 Family Medical And Dental Care Multan. Honest Care, Healthy Smiles.
+            </p>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-secondary">Contact Info</h5>
+<ul class="text-on-surface-variant space-y-2 font-body-md">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                    Loha Market Rd, Multan
+                </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+                    Mon-Sat: 10AM-2PM, 5PM-9PM
+                </li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-secondary">Quick Links</h5>
+<div class="grid grid-cols-2 gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="privacy.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="about.html">Our Doctors</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md" href="faq.html">FAQs</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 md:hidden bg-surface-container-lowest shadow-lg rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span>Services</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span>About</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span>Contact</span>
+</div>
+</nav>
+<script>
+        // Simple scroll effect for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+
+        // Basic button interactions
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => el.classList.add('scale-95'));
+            el.addEventListener('mouseup', () => el.classList.remove('scale-95'));
+            el.addEventListener('mouseleave', () => el.classList.remove('scale-95'));
+        });
+    </script>
+
+    <script>
+        // Change this if your backend runs somewhere other than localhost:5000
+        const API_BASE_URL = 'http://localhost:5000';
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str ?? '';
+            return div.innerHTML;
+        }
+
+        // Normal service card — matches the original static design.
+        function normalCardHTML(service) {
+            return `
+                <div class="service-card-hover bg-surface-container-lowest p-8 rounded-xl border border-outline-variant flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-primary">${escapeHtml(service.icon_name)}</span>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-on-surface mb-4">${escapeHtml(service.title)}</h4>
+                    <p class="text-on-surface-variant mb-6 flex-grow">${escapeHtml(service.short_description)}</p>
+                    <button data-service-id="${service.id}" class="learn-more-btn text-left text-primary font-label-md flex items-center gap-2 group">
+                        Learn More
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>`;
+        }
+
+        // Specialty card — the highlighted style used for is_specialty services.
+        function specialtyCardHTML(service) {
+            return `
+                <div class="service-card-hover bg-primary-container p-8 rounded-xl border-2 border-primary flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 opacity-10">
+                        <span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">${escapeHtml(service.icon_name)}</span>
+                    </div>
+                    <span class="text-[10px] tracking-widest font-bold text-primary-fixed mb-2 uppercase">Our Specialization</span>
+                    <h4 class="font-headline-md text-headline-md text-on-primary-container mb-4">${escapeHtml(service.title)}</h4>
+                    <p class="text-primary-fixed mb-6 flex-grow">${escapeHtml(service.short_description)}</p>
+                    <button data-service-id="${service.id}" class="learn-more-btn text-left text-surface-container-lowest font-bold font-label-md flex items-center gap-2 group">
+                        View Details
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>`;
+        }
+
+        let servicesCache = [];
+
+        function openServiceDetail(serviceId) {
+            const service = servicesCache.find(s => String(s.id) === String(serviceId));
+            if (!service) return;
+
+            document.getElementById('serviceDetailIcon').textContent = service.icon_name;
+            document.getElementById('serviceDetailTitle').textContent = service.title;
+            document.getElementById('serviceDetailDescription').textContent = service.short_description;
+
+            const badge = document.getElementById('serviceDetailBadge');
+            if (service.is_specialty) {
+                badge.textContent = 'Our Specialization';
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            document.getElementById('serviceDetailModal').classList.remove('hidden');
+        }
+
+        function closeServiceDetail() {
+            document.getElementById('serviceDetailModal').classList.add('hidden');
+        }
+
+        document.getElementById('closeServiceDetailModal').addEventListener('click', closeServiceDetail);
+        document.getElementById('closeServiceDetailModalSecondary').addEventListener('click', closeServiceDetail);
+        document.getElementById('serviceDetailModal').addEventListener('click', (e) => {
+            if (e.target.id === 'serviceDetailModal') closeServiceDetail();
+        });
+
+        async function loadServices() {
+            const grid = document.getElementById('servicesGrid');
+            try {
+                const res = await fetch(`${API_BASE_URL}/api/v1/services`);
+                if (!res.ok) throw new Error('Request failed');
+                const services = await res.json();
+                servicesCache = services;
+
+                if (services.length === 0) {
+                    grid.innerHTML = `<div class="col-span-full text-center py-12 text-on-surface-variant">No services listed yet.</div>`;
+                    return;
+                }
+
+                grid.innerHTML = services
+                    .map(s => (s.is_specialty ? specialtyCardHTML(s) : normalCardHTML(s)))
+                    .join('');
+
+                document.querySelectorAll('.learn-more-btn').forEach(btn => {
+                    btn.addEventListener('click', () => openServiceDetail(btn.dataset.serviceId));
+                });
+
+                // Fade the freshly-rendered cards in rather than having them pop in instantly.
+                document.querySelectorAll('#servicesGrid > div').forEach((card, i) => {
+                    card.classList.add('reveal');
+                    requestAnimationFrame(() => {
+                        setTimeout(() => card.classList.add('reveal-visible'), i * 60);
+                    });
+                });
+            } catch (err) {
+                // Backend not running / unreachable — keep the page usable
+                // instead of leaving a blank grid.
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-error">Could not load services right now. Please make sure the backend server is running.</div>`;
+            }
+        }
+
+        loadServices();
+    </script>
+</body></html>

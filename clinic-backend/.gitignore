@@ -1,0 +1,7 @@
+node_modules/
+
+# Never commit real secrets
+.env
+
+# Never commit real patient/appointment/inquiry data
+db/clinic-data.json

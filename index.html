@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Family Medical And Dental Care | Honest Diagnosis in Multan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(31, 75, 63, 0.12);
+        }
+        .bento-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-item:hover {
+            transform: translateY(-4px);
+        }
+        /* Shared "Book Appointment" CTA — identical on every page, on purpose. */
+        .btn-book-cta {
+            background-color: #C1791A;
+            color: #ffffff;
+            transition: filter 0.2s ease, transform 0.15s ease;
+        }
+        .btn-book-cta:hover { filter: brightness(1.08); }
+        .btn-book-cta:active { transform: scale(0.96); }
+
+        /* Scroll-reveal animation, respects reduced-motion preference. */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+    </style>
+<!-- CSS and JS initialization for Tailwind from JSON -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#3D6B5C",
+                      "surface-bright": "#F5F7F3",
+                      "surface-container-high": "#E3E9E1",
+                      "on-surface-variant": "#4B564F",
+                      "on-primary-container": "#F5F7F3",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#DCE3DA",
+                      "primary-container": "#1F4B3F",
+                      "tertiary-fixed-dim": "#b5c8df",
+                      "surface-container-low": "#EFF3ED",
+                      "outline": "#7A8580",
+                      "on-tertiary-fixed": "#091d2e",
+                      "surface-tint": "#1F4B3F",
+                      "tertiary-container": "#64768a",
+                      "primary-fixed": "#D9E8E1",
+                      "on-secondary-fixed-variant": "#1F4B3F",
+                      "inverse-on-surface": "#eff1f3",
+                      "background": "#F5F7F3",
+                      "primary-fixed-dim": "#8FB6A8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#36485b",
+                      "inverse-primary": "#8FB6A8",
+                      "surface": "#F5F7F3",
+                      "on-tertiary-container": "#fdfcff",
+                      "on-primary-fixed": "#0C231C",
+                      "surface-variant": "#DCE3DA",
+                      "on-secondary-container": "#1F4B3F",
+                      "outline-variant": "#C8D1C5",
+                      "error": "#ba1a1a",
+                      "tertiary": "#4c5e71",
+                      "secondary-fixed": "#E8EEE7",
+                      "primary": "#1F4B3F",
+                      "secondary-fixed-dim": "#96d3bd",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-fixed": "#d1e4fb",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#163A30",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#E8EEE7",
+                      "secondary-container": "#DCE9E1",
+                      "on-surface": "#1B2420",
+                      "on-background": "#1B2420",
+                      "inverse-surface": "#2d3133",
+                      "on-secondary-fixed": "#0C231C",
+                      "accent": "#C1791A",
+                      "on-accent": "#ffffff",
+                      "accent-container": "#F3E0C4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "stack-sm": "4px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "stack-md": "12px",
+                      "stack-lg": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "display": ["Fraunces"],
+                      "headline-md": ["Fraunces"],
+                      "headline-lg": ["Fraunces"],
+                      "caption": ["Inter"],
+                      "headline-lg-mobile": ["Fraunces"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface shadow-sm transition-all duration-300" id="main-nav">
+<div class="flex items-center gap-3 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="dentistry">dentistry</span>
+<span class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim hidden sm:block">Family Medical And Dental Care</span>
+<span class="font-display text-headline-md font-bold text-primary sm:hidden">FMDC</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md cursor-pointer hover:text-secondary transition-colors" href="index.html">Home</a>
+<a class="text-on-surface-variant font-label-md text-label-md cursor-pointer hover:text-secondary transition-colors" href="services.html">Services</a>
+<a class="text-on-surface-variant font-label-md text-label-md cursor-pointer hover:text-secondary transition-colors" href="about.html">About</a>
+<a class="text-on-surface-variant font-label-md text-label-md cursor-pointer hover:text-secondary transition-colors" href="contact.html">Contact</a>
+</div>
+<button onclick="window.location='book.html'" class="btn-book-cta rounded-full px-6 py-2 font-display font-bold shadow-sm text-label-md">
+            Book Appointment
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[795px] flex items-center pt-24 pb-20 md:pb-12">
+<div class="absolute inset-0 z-0 overflow-hidden">
+
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-bold mb-6">
+<span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+                    Trusted Dental Excellence in Multan
+                </div>
+<h1 class="font-display text-display md:text-display text-primary leading-tight mb-4">
+                    Family Medical And <br/><span class="text-secondary">Dental Care</span>
+</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-8 font-normal">
+                    Honest Care, Healthy Smiles.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button onclick="window.location='book.html'" class="btn-book-cta px-8 py-4 rounded-full font-display font-bold text-label-md shadow-lg">
+                        Book Appointment
+                    </button>
+<button onclick="window.location='contact.html'" class="flex items-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-full font-display font-bold text-label-md hover:bg-primary/5 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                        Contact Us
+                    </button>
+</div>
+<div class="mt-12 flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a smiling young patient with bright white teeth, soft clinic lighting, professional photography, clean medical background." src="assets/patient 1.png"/>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Portrait of an elderly gentleman smiling warmly, showcasing healthy dental care for seniors, soft natural lighting, high-end healthcare photography." src="assets/patient 2.png"/>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-white overflow-hidden bg-surface-container-high flex items-center justify-center bg-primary text-on-primary font-bold text-caption">
+                            47+
+                        </div>
+</div>
+<div>
+<div class="flex items-center text-secondary font-bold">
+<span class="material-symbols-outlined text-yellow-500" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1">4.9-star rating</span>
+</div>
+<p class="text-caption text-on-surface-variant">from 47+ happy patients in Multan</p>
+</div>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/5]">
+<img class="w-full h-full object-cover" data-alt="A professional dental clinic interior in Multan, featuring a state-of-the-art ergonomic dental chair, sterile environment, soft blue and mint green accents, warm natural light coming through a window, minimalist modern medical design." src="assets/hero.png"/>
+</div>
+<div class="absolute -bottom-6 -left-6 z-20 glass-card p-6 rounded-2xl shadow-xl max-w-[240px]">
+<div class="flex items-center gap-4 mb-2">
+<div class="p-2 bg-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="health_and_safety">health_and_safety</span>
+</div>
+<span class="font-display font-bold text-on-surface">100% Sterile</span>
+</div>
+<p class="text-caption text-on-surface-variant">Following strict international hygiene protocols for your safety.</p>
+</div>
+</div>
+</div>
+</header>
+<div class="relative -mt-1" aria-hidden="true">
+<svg viewBox="0 0 1440 60" class="w-full h-auto block" preserveAspectRatio="none">
+<path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#E8EEE7"></path>
+</svg>
+</div>
+<!-- Intro / Doctor Section -->
+<section class="py-24 bg-surface-container-low" id="about">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative reveal">
+<div class="aspect-square rounded-full border-[16px] border-white shadow-xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of Dr. Arif Siddiqui (BDS), a male dentist in a clean white medical coat with a friendly and authoritative expression. The background is a soft-focus medical clinic with calming blue tones, emphasizing trust and honest diagnosis." src="assets/Dr Arif.png"/>
+</div>
+<div class="absolute top-10 right-0 bg-primary text-on-primary p-4 rounded-2xl shadow-lg transform rotate-3">
+<p class="font-display font-bold text-headline-md">15+ Years</p>
+<p class="text-caption opacity-90">Experience</p>
+</div>
+</div>
+<div class="order-1 lg:order-2 reveal">
+<h2 class="font-display text-headline-lg text-primary mb-6">Expertise Rooted in <span class="text-secondary">Honesty</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        Meet <span class="font-bold text-on-surface">Dr. Arif Siddiqui (BDS)</span>, a dental professional dedicated to the philosophy that every patient deserves an honest diagnosis above all else.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        In a landscape often driven by quick procedures, Dr. Siddiqui focuses on long-term dental health. We specialize in "saving" your natural teeth whenever possible, utilizing advanced conservative dentistry techniques that others might overlook in favor of extractions.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white rounded-xl border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="clinical_notes">clinical_notes</span>
+<h4 class="font-display font-bold text-on-surface">Honest Diagnosis</h4>
+<p class="text-caption text-on-surface-variant">No unnecessary procedures, just what you need.</p>
+</div>
+<div class="p-4 bg-white rounded-xl border border-outline-variant">
+<span class="material-symbols-outlined text-secondary mb-2" data-icon="patient_list">patient_list</span>
+<h4 class="font-display font-bold text-on-surface">Patient First</h4>
+<p class="text-caption text-on-surface-variant">Care tailored to your comfort and budget.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-24" id="services">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<h2 class="font-display text-headline-lg text-primary mb-4">Comprehensive Care</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">From routine check-ups to complex restorations, we offer a full spectrum of dental services using the latest technology.</p>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- General Dentistry -->
+<div class="md:col-span-2 md:row-span-1 bento-item reveal bg-white p-8 rounded-3xl shadow-sm border border-outline-variant flex flex-col justify-between group cursor-pointer overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 group-hover:scale-110 transition-transform" data-icon="dentistry">dentistry</span>
+<h3 class="font-display text-headline-md text-on-surface mb-2">General Dentistry</h3>
+<p class="text-on-surface-variant">Routine cleaning, fillings, and preventive care to keep your smile healthy.</p>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[150px]" data-icon="clean_hands">clean_hands</span>
+</div>
+</div>
+<!-- Orthodontics -->
+<div class="md:col-span-1 md:row-span-1 bento-item reveal bg-secondary-container p-8 rounded-3xl shadow-sm flex flex-col items-center justify-center text-center group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 group-hover:rotate-12 transition-transform" data-icon="orthodontics">orthopedics</span>
+<h3 class="font-display text-on-secondary-container font-bold">Orthodontics</h3>
+<p class="text-on-secondary-container/80 text-caption mt-2">Aligning smiles with precision.</p>
+</div>
+<!-- Oral Surgery -->
+<div class="md:col-span-1 md:row-span-2 bento-item reveal bg-primary text-on-primary p-8 rounded-3xl shadow-sm flex flex-col justify-end group cursor-pointer relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="High-tech dental surgery equipment in a sterile room, surgical lights reflecting off stainless steel surfaces, professional dental tools arranged neatly, clinical modern medical aesthetic." src="assets/oral surgery.png"/>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="medical_services">medical_services</span>
+<h3 class="font-display text-headline-md mb-2">Oral Surgery</h3>
+<p class="opacity-90">Expert extractions and implant surgery when natural teeth cannot be saved.</p>
+</div>
+</div>
+<!-- Cosmetic -->
+<div class="md:col-span-1 md:row-span-1 bento-item reveal bg-white p-8 rounded-3xl shadow-sm border border-outline-variant flex flex-col justify-between group cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="mood">mood</span>
+<div>
+<h3 class="font-display font-bold text-on-surface">Cosmetic</h3>
+<p class="text-caption text-on-surface-variant">Teeth whitening &amp; veneers.</p>
+</div>
+</div>
+<!-- Root Canal -->
+<div class="md:col-span-2 md:row-span-1 bento-item reveal bg-surface-container-high p-8 rounded-3xl shadow-sm flex items-center gap-6 group cursor-pointer">
+<div class="flex-1">
+<h3 class="font-display text-headline-md text-on-surface mb-2">Root Canal Treatment</h3>
+<p class="text-on-surface-variant">Pain-free procedures to save infected teeth. Our clinic's primary specialty.</p>
+</div>
+<div class="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-5xl text-primary" data-icon="pulmonology">pulmonology</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-primary-container relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-display text-headline-lg text-on-primary-container mb-4">Real Stories of Saved Smiles</h2>
+<p class="text-on-primary-container/80 max-w-2xl mx-auto">Patients who came to us as a last resort and left with their natural teeth intact.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-white p-8 rounded-2xl shadow-xl border border-white/20 reveal">
+<div class="flex text-yellow-500 mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface mb-6">"Two clinics told me my molar had to be extracted. Dr. Siddiqui performed a complex root canal instead. 2 years later, the tooth is as strong as ever. Truly honest care."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center font-bold text-secondary">AM</div>
+<div>
+<p class="font-bold text-on-surface">Ahmed Malik</p>
+<p class="text-caption text-on-surface-variant">Patient since 2021</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-8 rounded-2xl shadow-xl border border-white/20 reveal">
+<div class="flex text-yellow-500 mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface mb-6">"Family-friendly atmosphere and very professional. They don't try to upsell you. My kids actually enjoy their dental visits here, which is a miracle!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center font-bold text-white">SK</div>
+<div>
+<p class="font-bold text-on-surface">Sara Khan</p>
+<p class="text-caption text-on-surface-variant">Mother of 3</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-8 rounded-2xl shadow-xl border border-white/20 reveal">
+<div class="flex text-yellow-500 mb-4">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface mb-6">"Most clinics in Multan suggested an expensive bridge. Dr. Arif gave me a simple, honest solution that saved me thousands and fixed the root cause."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center font-bold text-secondary">RZ</div>
+<div>
+<p class="font-bold text-on-surface">Raza Zadi</p>
+<p class="text-caption text-on-surface-variant">Local Business Owner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-high dark:bg-inverse-surface border-t border-outline-variant" id="contact">
+<div class="w-full px-margin-desktop py-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="dentistry">dentistry</span>
+<span class="font-display text-headline-md font-bold text-on-surface">FMDC Multan</span>
+</div>
+<p class="text-on-surface-variant mb-6 pr-8">
+                    Providing honest diagnosis and empathetic dental care for the families of Multan. Your oral health is our priority.
+                </p>
+<a href="tel:+923000000000" class="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                    +92 300 0000000
+                </a>
+</div>
+<div>
+<h4 class="font-display font-bold text-on-surface mb-6">Location &amp; Hours</h4>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+<span class="text-on-surface-variant">Loha Market Rd, Multan, Pakistan</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+<span class="text-on-surface-variant">Mon-Sat: 10AM-2PM, 5PM-9PM</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="call">call</span>
+<span class="text-on-surface-variant">+92 300 0000000</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-display font-bold text-on-surface mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="about.html">Our Team</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="book.html">Book Appointment</a></li>
+</ul>
+</div>
+</div>
+<div class="w-full px-margin-desktop py-6 border-t border-outline-variant/30 text-center text-caption text-on-surface-variant">
+            © 2026 Family Medical And Dental Care Multan. Honest Care, Healthy Smiles.
+        </div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 md:hidden bg-surface-container-lowest dark:bg-inverse-surface shadow-lg rounded-t-xl border-t border-outline-variant/10">
+<a href="index.html" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-[10px]">Home</span>
+</a>
+<a href="services.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-label-md text-[10px]">Services</span>
+</a>
+<a href="about.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-label-md text-[10px]">About</span>
+</a>
+<a href="contact.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-md text-[10px]">Contact</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('py-4', 'shadow-sm');
+            } else {
+                nav.classList.add('py-4', 'shadow-sm');
+                nav.classList.remove('py-2', 'shadow-md');
+            }
+        });
+
+        // Simple smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll-reveal: fade + rise elements into view as the user scrolls.
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body></html>

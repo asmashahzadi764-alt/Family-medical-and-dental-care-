@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | Family Medical And Dental Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+  }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          secondary: "#3D6B5C",
+          "surface-container-low": "#EFF3ED",
+          "surface-container-high": "#E3E9E1",
+          "on-surface-variant": "#4B564F",
+          background: "#F5F7F3",
+          surface: "#F5F7F3",
+          "surface-container-lowest": "#ffffff",
+          "outline-variant": "#C8D1C5",
+          error: "#ba1a1a",
+          "error-container": "#ffdad6",
+          primary: "#1F4B3F",
+          "on-surface": "#1B2420",
+          "secondary-container": "#DCE9E1",
+          "on-secondary-container": "#1F4B3F",
+          accent: "#C1791A"
+        },
+        fontFamily: {
+          display: ["Fraunces"],
+          body: ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen">
+
+<!-- ============ LOGIN SCREEN ============ -->
+<div id="loginScreen" class="min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-lg border border-outline-variant p-8">
+    <div class="flex items-center gap-2 mb-6 justify-center">
+      <span class="material-symbols-outlined text-primary text-3xl">dentistry</span>
+      <h1 class="font-display font-bold text-lg text-primary">FMDC Admin</h1>
+    </div>
+    <div id="loginError" class="hidden mb-4 px-3 py-2 rounded-lg bg-error-container text-error text-sm font-semibold"></div>
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-bold mb-1" for="email">Email</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="email" type="email" required/>
+      </div>
+      <div>
+        <label class="block text-sm font-bold mb-1" for="password">Password</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="password" type="password" required/>
+      </div>
+      <button class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all" type="submit" id="loginBtn">
+        Log In
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="dashboard" class="hidden">
+
+  <header class="bg-white border-b border-outline-variant px-6 py-4 flex items-center justify-between sticky top-0 z-10">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-primary text-2xl">dentistry</span>
+      <h1 class="font-display font-bold text-primary">Family Medical &amp; Dental Care — Admin</h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <span id="welcomeName" class="text-sm text-on-surface-variant hidden sm:inline"></span>
+      <button id="changePasswordBtn" class="text-sm font-bold text-primary hover:opacity-80">Change Password</button>
+      <button id="logoutBtn" class="text-sm font-bold text-error hover:opacity-80">Log Out</button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-8">
+
+    <!-- Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      <div class="bg-white rounded-xl border border-outline-variant p-6 flex items-center gap-4">
+        <span class="material-symbols-outlined text-primary text-3xl bg-primary/10 p-3 rounded-full">event</span>
+        <div>
+          <p class="text-sm text-on-surface-variant">Today's Appointments</p>
+          <p id="statToday" class="text-2xl font-bold font-display">—</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl border border-outline-variant p-6 flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary text-3xl bg-secondary/10 p-3 rounded-full">mail</span>
+        <div>
+          <p class="text-sm text-on-surface-variant">Pending Inquiries</p>
+          <p id="statPending" class="text-2xl font-bold font-display">—</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-2 mb-6 border-b border-outline-variant">
+      <button data-tab="appointments" class="tab-btn px-4 py-2 font-bold text-primary border-b-2 border-primary">Appointments</button>
+      <button data-tab="inquiries" class="tab-btn px-4 py-2 font-bold text-on-surface-variant border-b-2 border-transparent">Inquiries</button>
+      <button data-tab="services" class="tab-btn px-4 py-2 font-bold text-on-surface-variant border-b-2 border-transparent">Services</button>
+    </div>
+
+    <div class="flex justify-between items-center mb-3">
+      <button id="addServiceBtn" class="hidden items-center gap-1 text-sm font-bold text-white bg-primary px-4 py-2 rounded-lg hover:opacity-90">
+        <span class="material-symbols-outlined text-lg">add</span> Add Service
+      </button>
+      <button id="refreshBtn" class="flex items-center gap-1 text-sm font-bold text-primary hover:opacity-80 ml-auto">
+        <span class="material-symbols-outlined text-lg">refresh</span> Refresh
+      </button>
+    </div>
+
+    <!-- Appointments Panel -->
+    <div id="panel-appointments" class="tab-panel">
+      <div class="bg-white rounded-xl border border-outline-variant overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-surface-container-low text-on-surface-variant uppercase text-xs">
+            <tr>
+              <th class="px-4 py-3">Patient</th>
+              <th class="px-4 py-3">Phone</th>
+              <th class="px-4 py-3">Service</th>
+              <th class="px-4 py-3">Date</th>
+              <th class="px-4 py-3">Time</th>
+              <th class="px-4 py-3">Status</th>
+              <th class="px-4 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="appointmentsBody">
+            <tr><td colspan="7" class="px-4 py-6 text-center text-on-surface-variant">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Inquiries Panel -->
+    <div id="panel-inquiries" class="tab-panel hidden">
+      <div class="bg-white rounded-xl border border-outline-variant overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-surface-container-low text-on-surface-variant uppercase text-xs">
+            <tr>
+              <th class="px-4 py-3">Name</th>
+              <th class="px-4 py-3">Phone</th>
+              <th class="px-4 py-3">Service Interest</th>
+              <th class="px-4 py-3">Message</th>
+              <th class="px-4 py-3">Status</th>
+              <th class="px-4 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="inquiriesBody">
+            <tr><td colspan="6" class="px-4 py-6 text-center text-on-surface-variant">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Services Panel -->
+    <div id="panel-services" class="tab-panel hidden">
+      <div class="bg-white rounded-xl border border-outline-variant overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-surface-container-low text-on-surface-variant uppercase text-xs">
+            <tr>
+              <th class="px-4 py-3">Order</th>
+              <th class="px-4 py-3">Title</th>
+              <th class="px-4 py-3">Description</th>
+              <th class="px-4 py-3">Icon</th>
+              <th class="px-4 py-3">Specialty</th>
+              <th class="px-4 py-3">Active</th>
+              <th class="px-4 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="servicesBody">
+            <tr><td colspan="7" class="px-4 py-6 text-center text-on-surface-variant">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============ ADD / EDIT SERVICE MODAL ============ -->
+<div id="serviceModal" class="hidden fixed inset-0 bg-black/40 z-20 flex items-center justify-center px-4">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between mb-4">
+      <h3 id="serviceModalTitle" class="font-display font-bold text-lg">Add Service</h3>
+      <button id="closeServiceModal" class="text-on-surface-variant hover:text-error">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div id="serviceFeedback" class="hidden mb-4 px-3 py-2 rounded-lg text-sm font-semibold"></div>
+    <form id="serviceForm" class="space-y-4">
+      <input type="hidden" id="serviceId"/>
+      <div>
+        <label class="block text-sm font-bold mb-1" for="serviceTitle">Title</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="serviceTitle" type="text" required/>
+      </div>
+      <div>
+        <label class="block text-sm font-bold mb-1" for="serviceDescription">Description</label>
+        <textarea class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="serviceDescription" rows="3" required></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-bold mb-1" for="serviceIcon">Icon name</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="serviceIcon" type="text" placeholder="e.g. dentistry, biotech, healing" required/>
+        <p class="text-xs text-on-surface-variant mt-1">
+          Any <a href="https://fonts.google.com/icons" target="_blank" class="underline text-primary">Material Symbols</a> icon name.
+        </p>
+      </div>
+      <div>
+        <label class="block text-sm font-bold mb-1" for="serviceOrder">Display order</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="serviceOrder" type="number" min="0" value="0" required/>
+      </div>
+      <div class="flex items-center gap-2">
+        <input id="serviceSpecialty" type="checkbox" class="w-4 h-4"/>
+        <label for="serviceSpecialty" class="text-sm font-bold">Highlight as specialty</label>
+      </div>
+      <div class="flex items-center gap-2">
+        <input id="serviceActive" type="checkbox" class="w-4 h-4" checked/>
+        <label for="serviceActive" class="text-sm font-bold">Active (visible on the website)</label>
+      </div>
+      <button class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all" type="submit" id="serviceSubmitBtn">
+        Save Service
+      </button>
+    </form>
+  </div>
+</div>
+<div id="passwordModal" class="hidden fixed inset-0 bg-black/40 z-20 flex items-center justify-center px-4">
+  <div class="w-full max-w-sm bg-white rounded-2xl shadow-lg p-6">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-display font-bold text-lg">Change Password</h3>
+      <button id="closePasswordModal" class="text-on-surface-variant hover:text-error">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div id="passwordFeedback" class="hidden mb-4 px-3 py-2 rounded-lg text-sm font-semibold"></div>
+    <form id="passwordForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-bold mb-1" for="currentPassword">Current Password</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="currentPassword" type="password" required/>
+      </div>
+      <div>
+        <label class="block text-sm font-bold mb-1" for="newPassword">New Password</label>
+        <input class="w-full rounded-lg border border-outline-variant px-3 py-2 focus:ring-2 focus:ring-primary focus:outline-none" id="newPassword" type="password" minlength="8" required/>
+        <p class="text-xs text-on-surface-variant mt-1">At least 8 characters.</p>
+      </div>
+      <button class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all" type="submit" id="passwordSubmitBtn">
+        Update Password
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Change this if your backend runs somewhere other than localhost:5000
+  const API_BASE_URL = 'http://localhost:5000';
+
+  const loginScreen = document.getElementById('loginScreen');
+  const dashboard = document.getElementById('dashboard');
+  const loginForm = document.getElementById('loginForm');
+  const loginError = document.getElementById('loginError');
+  const loginBtn = document.getElementById('loginBtn');
+  const welcomeName = document.getElementById('welcomeName');
+
+  let token = localStorage.getItem('fmdc_admin_token') || null;
+
+  function showLogin(message) {
+    dashboard.classList.add('hidden');
+    loginScreen.classList.remove('hidden');
+    if (message) {
+      loginError.textContent = message;
+      loginError.classList.remove('hidden');
+    }
+  }
+
+  function showDashboard() {
+    loginScreen.classList.add('hidden');
+    dashboard.classList.remove('hidden');
+    loadEverything();
+  }
+
+  async function apiFetch(path, options = {}) {
+    const res = await fetch(`${API_BASE_URL}${path}`, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        ...(options.headers || {}),
+        Authorization: `Bearer ${token}`
+      }
+    });
+    if (res.status === 401) {
+      localStorage.removeItem('fmdc_admin_token');
+      token = null;
+      showLogin('Your session expired. Please log in again.');
+      throw new Error('Unauthorized');
+    }
+    return res;
+  }
+
+  // ---------- Login ----------
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    loginError.classList.add('hidden');
+    loginBtn.disabled = true;
+    loginBtn.textContent = 'Logging in...';
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/v1/admin/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: document.getElementById('email').value.trim(),
+          password: document.getElementById('password').value
+        })
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        token = data.token;
+        localStorage.setItem('fmdc_admin_token', token);
+        welcomeName.textContent = `Hi, ${data.user.name}`;
+        showDashboard();
+      } else {
+        loginError.textContent = data.error || 'Login failed.';
+        loginError.classList.remove('hidden');
+      }
+    } catch (err) {
+      loginError.textContent = 'Could not reach the server. Is the backend running?';
+      loginError.classList.remove('hidden');
+    } finally {
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Log In';
+    }
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    localStorage.removeItem('fmdc_admin_token');
+    token = null;
+    showLogin();
+  });
+
+  // ---------- Change Password ----------
+  const passwordModal = document.getElementById('passwordModal');
+  const passwordForm = document.getElementById('passwordForm');
+  const passwordFeedback = document.getElementById('passwordFeedback');
+  const passwordSubmitBtn = document.getElementById('passwordSubmitBtn');
+
+  document.getElementById('changePasswordBtn').addEventListener('click', () => {
+    passwordForm.reset();
+    passwordFeedback.classList.add('hidden');
+    passwordModal.classList.remove('hidden');
+  });
+
+  document.getElementById('closePasswordModal').addEventListener('click', () => {
+    passwordModal.classList.add('hidden');
+  });
+
+  passwordForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    passwordFeedback.classList.add('hidden');
+    passwordSubmitBtn.disabled = true;
+    passwordSubmitBtn.textContent = 'Updating...';
+
+    try {
+      const res = await apiFetch('/api/v1/admin/change-password', {
+        method: 'POST',
+        body: JSON.stringify({
+          current_password: document.getElementById('currentPassword').value,
+          new_password: document.getElementById('newPassword').value
+        })
+      });
+      const data = await res.json();
+
+      passwordFeedback.classList.remove('hidden', 'bg-secondary-container', 'text-on-secondary-container', 'bg-error-container', 'text-error');
+      if (res.ok) {
+        passwordFeedback.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        passwordFeedback.textContent = data.message;
+        passwordForm.reset();
+        setTimeout(() => passwordModal.classList.add('hidden'), 2000);
+      } else {
+        passwordFeedback.classList.add('bg-error-container', 'text-error');
+        passwordFeedback.textContent = data.error || 'Could not update password.';
+      }
+    } catch (err) {
+      passwordFeedback.classList.remove('hidden');
+      passwordFeedback.classList.add('bg-error-container', 'text-error');
+      passwordFeedback.textContent = 'Could not reach the server.';
+    } finally {
+      passwordSubmitBtn.disabled = false;
+      passwordSubmitBtn.textContent = 'Update Password';
+    }
+  });
+
+  // ---------- Tabs ----------
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('text-primary', 'border-primary');
+        b.classList.add('text-on-surface-variant', 'border-transparent');
+      });
+      btn.classList.add('text-primary', 'border-primary');
+      btn.classList.remove('text-on-surface-variant', 'border-transparent');
+
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(`panel-${btn.dataset.tab}`).classList.remove('hidden');
+
+      const addBtn = document.getElementById('addServiceBtn');
+      if (btn.dataset.tab === 'services') {
+        addBtn.classList.remove('hidden');
+        addBtn.classList.add('flex');
+      } else {
+        addBtn.classList.add('hidden');
+        addBtn.classList.remove('flex');
+      }
+    });
+  });
+
+  document.getElementById('refreshBtn').addEventListener('click', loadEverything);
+
+  // ---------- Data loading ----------
+  const STATUS_STYLES = {
+    Pending: 'bg-yellow-100 text-yellow-800',
+    Confirmed: 'bg-green-100 text-green-800',
+    Cancelled: 'bg-red-100 text-red-800',
+    Completed: 'bg-blue-100 text-blue-800',
+    New: 'bg-yellow-100 text-yellow-800',
+    Contacted: 'bg-blue-100 text-blue-800',
+    Closed: 'bg-gray-200 text-gray-700'
+  };
+
+  function statusBadge(status) {
+    const cls = STATUS_STYLES[status] || 'bg-gray-100 text-gray-700';
+    return `<span class="px-2 py-1 rounded-full text-xs font-bold ${cls}">${status}</span>`;
+  }
+
+  async function loadEverything() {
+    await Promise.all([loadStats(), loadAppointments(), loadInquiries(), loadServices()]);
+  }
+
+  async function loadStats() {
+    try {
+      const res = await apiFetch('/api/v1/admin/dashboard-stats');
+      const data = await res.json();
+      document.getElementById('statToday').textContent = data.todayAppointments ?? '0';
+      document.getElementById('statPending').textContent = data.pendingInquiries ?? '0';
+    } catch (e) { /* handled by apiFetch redirect on 401 */ }
+  }
+
+  async function loadAppointments() {
+    const body = document.getElementById('appointmentsBody');
+    try {
+      const res = await apiFetch('/api/v1/admin/appointments');
+      const rows = await res.json();
+
+      if (rows.length === 0) {
+        body.innerHTML = `<tr><td colspan="7" class="px-4 py-6 text-center text-on-surface-variant">No appointments yet.</td></tr>`;
+        return;
+      }
+
+      body.innerHTML = rows.map(a => `
+        <tr class="border-t border-outline-variant">
+          <td class="px-4 py-3 font-semibold">${escapeHtml(a.full_name)}</td>
+          <td class="px-4 py-3">${escapeHtml(a.phone_number)}</td>
+          <td class="px-4 py-3">${escapeHtml(a.service_type)}</td>
+          <td class="px-4 py-3">${escapeHtml(a.preferred_date)}</td>
+          <td class="px-4 py-3">${escapeHtml(a.time_slot)}</td>
+          <td class="px-4 py-3">${statusBadge(a.status)}</td>
+          <td class="px-4 py-3">
+            <select data-id="${a.id}" class="appointment-status-select text-xs rounded-lg border border-outline-variant px-2 py-1">
+              ${['Pending', 'Confirmed', 'Cancelled', 'Completed'].map(s =>
+                `<option value="${s}" ${s === a.status ? 'selected' : ''}>${s}</option>`
+              ).join('')}
+            </select>
+          </td>
+        </tr>
+      `).join('');
+
+      document.querySelectorAll('.appointment-status-select').forEach(sel => {
+        sel.addEventListener('change', async () => {
+          const id = sel.dataset.id;
+          await apiFetch(`/api/v1/admin/appointments/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ status: sel.value })
+          });
+          loadStats();
+        });
+      });
+    } catch (e) {
+      body.innerHTML = `<tr><td colspan="7" class="px-4 py-6 text-center text-error">Could not load appointments.</td></tr>`;
+    }
+  }
+
+  async function loadInquiries() {
+    const body = document.getElementById('inquiriesBody');
+    try {
+      const res = await apiFetch('/api/v1/admin/inquiries');
+      const rows = await res.json();
+
+      if (rows.length === 0) {
+        body.innerHTML = `<tr><td colspan="6" class="px-4 py-6 text-center text-on-surface-variant">No inquiries yet.</td></tr>`;
+        return;
+      }
+
+      body.innerHTML = rows.map(i => `
+        <tr class="border-t border-outline-variant align-top">
+          <td class="px-4 py-3 font-semibold">${escapeHtml(i.full_name)}</td>
+          <td class="px-4 py-3">${escapeHtml(i.phone_number)}</td>
+          <td class="px-4 py-3">${escapeHtml(i.service_interest || '—')}</td>
+          <td class="px-4 py-3 max-w-xs">${escapeHtml(i.message)}</td>
+          <td class="px-4 py-3">${statusBadge(i.status)}</td>
+          <td class="px-4 py-3">
+            <select data-id="${i.id}" class="inquiry-status-select text-xs rounded-lg border border-outline-variant px-2 py-1">
+              ${['New', 'Contacted', 'Closed'].map(s =>
+                `<option value="${s}" ${s === i.status ? 'selected' : ''}>${s}</option>`
+              ).join('')}
+            </select>
+          </td>
+        </tr>
+      `).join('');
+
+      document.querySelectorAll('.inquiry-status-select').forEach(sel => {
+        sel.addEventListener('change', async () => {
+          const id = sel.dataset.id;
+          await apiFetch(`/api/v1/admin/inquiries/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ status: sel.value })
+          });
+          loadStats();
+        });
+      });
+    } catch (e) {
+      body.innerHTML = `<tr><td colspan="6" class="px-4 py-6 text-center text-error">Could not load inquiries.</td></tr>`;
+    }
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str ?? '';
+    return div.innerHTML;
+  }
+
+  // ---------- Services ----------
+  const serviceModal = document.getElementById('serviceModal');
+  const serviceForm = document.getElementById('serviceForm');
+  const serviceFeedback = document.getElementById('serviceFeedback');
+  const serviceSubmitBtn = document.getElementById('serviceSubmitBtn');
+  const serviceModalTitle = document.getElementById('serviceModalTitle');
+  let servicesCache = [];
+
+  async function loadServices() {
+    const body = document.getElementById('servicesBody');
+    try {
+      const res = await apiFetch('/api/v1/services/admin/all');
+      const rows = await res.json();
+      servicesCache = rows;
+
+      if (rows.length === 0) {
+        body.innerHTML = `<tr><td colspan="7" class="px-4 py-6 text-center text-on-surface-variant">No services yet. Click "Add Service" to create one.</td></tr>`;
+        return;
+      }
+
+      body.innerHTML = rows.map(s => `
+        <tr class="border-t border-outline-variant align-top">
+          <td class="px-4 py-3">${s.display_order}</td>
+          <td class="px-4 py-3 font-semibold">${escapeHtml(s.title)}</td>
+          <td class="px-4 py-3 max-w-xs">${escapeHtml(s.short_description)}</td>
+          <td class="px-4 py-3"><span class="material-symbols-outlined text-primary">${escapeHtml(s.icon_name)}</span></td>
+          <td class="px-4 py-3">${s.is_specialty ? '<span class="px-2 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary">Yes</span>' : '—'}</td>
+          <td class="px-4 py-3">
+            <button data-id="${s.id}" data-active="${s.active}" class="toggle-active-btn px-2 py-1 rounded-full text-xs font-bold ${s.active ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-700'}">
+              ${s.active ? 'Active' : 'Hidden'}
+            </button>
+          </td>
+          <td class="px-4 py-3 flex gap-2">
+            <button data-id="${s.id}" class="edit-service-btn text-primary hover:opacity-80">
+              <span class="material-symbols-outlined text-lg">edit</span>
+            </button>
+            <button data-id="${s.id}" class="delete-service-btn text-error hover:opacity-80">
+              <span class="material-symbols-outlined text-lg">delete</span>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+      document.querySelectorAll('.toggle-active-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          const currentlyActive = btn.dataset.active === 'true';
+          await apiFetch(`/api/v1/services/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ active: !currentlyActive })
+          });
+          loadServices();
+        });
+      });
+
+      document.querySelectorAll('.edit-service-btn').forEach(btn => {
+        btn.addEventListener('click', () => openServiceModal(btn.dataset.id));
+      });
+
+      document.querySelectorAll('.delete-service-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if (!confirm('Delete this service? This cannot be undone.')) return;
+          await apiFetch(`/api/v1/services/${btn.dataset.id}`, { method: 'DELETE' });
+          loadServices();
+        });
+      });
+    } catch (e) {
+      body.innerHTML = `<tr><td colspan="7" class="px-4 py-6 text-center text-error">Could not load services.</td></tr>`;
+    }
+  }
+
+  function openServiceModal(id) {
+    serviceFeedback.classList.add('hidden');
+    serviceForm.reset();
+
+    if (id) {
+      const service = servicesCache.find(s => String(s.id) === String(id));
+      serviceModalTitle.textContent = 'Edit Service';
+      document.getElementById('serviceId').value = service.id;
+      document.getElementById('serviceTitle').value = service.title;
+      document.getElementById('serviceDescription').value = service.short_description;
+      document.getElementById('serviceIcon').value = service.icon_name;
+      document.getElementById('serviceOrder').value = service.display_order;
+      document.getElementById('serviceSpecialty').checked = !!service.is_specialty;
+      document.getElementById('serviceActive').checked = !!service.active;
+    } else {
+      serviceModalTitle.textContent = 'Add Service';
+      document.getElementById('serviceId').value = '';
+      document.getElementById('serviceActive').checked = true;
+    }
+
+    serviceModal.classList.remove('hidden');
+  }
+
+  document.getElementById('addServiceBtn').addEventListener('click', () => openServiceModal(null));
+  document.getElementById('closeServiceModal').addEventListener('click', () => {
+    serviceModal.classList.add('hidden');
+  });
+
+  serviceForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    serviceFeedback.classList.add('hidden');
+    serviceSubmitBtn.disabled = true;
+    serviceSubmitBtn.textContent = 'Saving...';
+
+    const id = document.getElementById('serviceId').value;
+    const payload = {
+      title: document.getElementById('serviceTitle').value.trim(),
+      short_description: document.getElementById('serviceDescription').value.trim(),
+      icon_name: document.getElementById('serviceIcon').value.trim(),
+      display_order: parseInt(document.getElementById('serviceOrder').value, 10) || 0,
+      is_specialty: document.getElementById('serviceSpecialty').checked,
+      active: document.getElementById('serviceActive').checked
+    };
+
+    try {
+      const res = await apiFetch(id ? `/api/v1/services/${id}` : '/api/v1/services', {
+        method: id ? 'PATCH' : 'POST',
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        serviceModal.classList.add('hidden');
+        loadServices();
+      } else {
+        serviceFeedback.classList.remove('hidden');
+        serviceFeedback.classList.add('bg-error-container', 'text-error');
+        serviceFeedback.textContent = data.error || 'Could not save service.';
+      }
+    } catch (err) {
+      serviceFeedback.classList.remove('hidden');
+      serviceFeedback.classList.add('bg-error-container', 'text-error');
+      serviceFeedback.textContent = 'Could not reach the server.';
+    } finally {
+      serviceSubmitBtn.disabled = false;
+      serviceSubmitBtn.textContent = 'Save Service';
+    }
+  });
+
+  // ---------- Boot ----------
+  if (token) {
+    showDashboard();
+  } else {
+    showLogin();
+  }
+</script>
+</body>
+</html>

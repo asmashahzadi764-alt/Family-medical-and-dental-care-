@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment - Family Medical And Dental Care</title>
+<meta content="Secure your dental or medical consultation in Multan. Honest Care, Healthy Smiles." name="description"/>
+<!-- Google Fonts: Fraunces & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Shared Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#2c6956",
+                    "surface-bright": "#F5F7F3",
+                    "surface-container-high": "#E3E9E1",
+                    "on-surface-variant": "#4B564F",
+                    "on-primary-container": "#F5F7F3",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#DCE3DA",
+                    "primary-container": "#1F4B3F",
+                    "tertiary-fixed-dim": "#b5c8df",
+                    "surface-container-low": "#EFF3ED",
+                    "outline": "#7A8580",
+                    "on-tertiary-fixed": "#091d2e",
+                    "surface-tint": "#1F4B3F",
+                    "tertiary-container": "#64768a",
+                    "primary-fixed": "#D9E8E1",
+                    "on-secondary-fixed-variant": "#1F4B3F",
+                    "inverse-on-surface": "#eff1f3",
+                    "background": "#F5F7F3",
+                    "primary-fixed-dim": "#8FB6A8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#36485b",
+                    "inverse-primary": "#8FB6A8",
+                    "surface": "#F5F7F3",
+                    "on-tertiary-container": "#fdfcff",
+                    "on-primary-fixed": "#0C231C",
+                    "surface-variant": "#DCE3DA",
+                    "on-secondary-container": "#1F4B3F",
+                    "outline-variant": "#C8D1C5",
+                    "error": "#ba1a1a",
+                    "tertiary": "#4c5e71",
+                    "secondary-fixed": "#E8EEE7",
+                    "primary": "#1F4B3F",
+                    "secondary-fixed-dim": "#96d3bd",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed": "#d1e4fb",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#163A30",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#E8EEE7",
+                    "secondary-container": "#DCE9E1",
+                    "on-surface": "#1B2420",
+                    "on-background": "#1B2420",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed": "#0C231C",
+                    "accent": "#C1791A",
+                    "on-accent": "#ffffff",
+                    "accent-container": "#F3E0C4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "4px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "stack-md": "12px",
+                    "stack-lg": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display": ["Fraunces"],
+                    "headline-md": ["Fraunces"],
+                    "headline-lg": ["Fraunces"],
+                    "caption": ["Inter"],
+                    "headline-lg-mobile": ["Fraunces"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(31, 75, 63, 0.12);
+      }
+      .btn-book-cta {
+        background-color: #C1791A;
+        color: #ffffff;
+        transition: filter 0.2s ease, transform 0.15s ease;
+      }
+      .btn-book-cta:hover { filter: brightness(1.08); }
+      .btn-book-cta:active { transform: scale(0.96); }
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal.reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface shadow-sm transition-all duration-300">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">dentistry</span>
+<h1 class="font-display text-headline-md font-bold text-primary">Family Medical And Dental Care</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="services.html">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="about.html">About</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary cursor-pointer active:scale-95 transition-transform" href="book.html">Book Appointment</a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow pt-24 pb-16">
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-12 gap-gutter items-start">
+<!-- Left Side: Content & Image -->
+<div class="md:col-span-5 space-y-8 reveal">
+<div class="space-y-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-md font-label-md">
+<span class="material-symbols-outlined text-sm mr-2" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Trusted Healthcare in Multan
+                    </span>
+<h2 class="font-display text-headline-lg md:text-display text-primary leading-tight">
+                        Your Path to a <br/><span class="text-secondary">Healthy Smile</span> Starts Here.
+                    </h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">
+                        Experience clinical precision combined with empathetic care. We ensure every visit is transparent, safe, and focused on your well-being.
+                    </p>
+</div>
+<!-- Clinic Info Card -->
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-4 shadow-sm">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-2 rounded-lg">location_on</span>
+<div>
+<p class="font-label-md text-on-surface">Our Location</p>
+<p class="text-on-surface-variant">Loha Market Rd, Multan, Pakistan</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-2 rounded-lg">schedule</span>
+<div>
+<p class="font-label-md text-on-surface">Clinic Hours</p>
+<p class="text-on-surface-variant">Mon-Sat: 10AM-2PM &amp; 5PM-9PM</p>
+</div>
+</div>
+</div>
+<!-- Abstract Decorative Image -->
+<div class="relative group overflow-hidden rounded-2xl shadow-lg h-64 md:h-80 w-full">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional dental clinic interior in Multan with minimalist design, clean white surfaces, and soft blue accents. The lighting is bright and sterile yet welcoming, featuring high-end medical equipment in the background and a comfortable patient chair. The atmosphere conveys trust, hygiene, and modern corporate professionalism consistent with a premium healthcare facility." src="assets/Clinic.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-6">
+<p class="text-white font-label-md flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">festival</span>
+                            Modern Clinical Standards
+                        </p>
+</div>
+</div>
+</div>
+<!-- Right Side: Booking Form -->
+<div class="md:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-3xl shadow-lg border border-outline-variant/20 reveal">
+<div class="mb-10">
+<h3 class="font-display text-headline-lg text-primary mb-2">Book Your Visit</h3>
+<p class="text-on-surface-variant font-body-md">Fill out the form below and our coordinator will contact you to confirm.</p>
+</div>
+
+<!-- Feedback banner: hidden by default, shown by JS on success/error -->
+<div id="bookingFeedback" class="hidden mb-6 px-4 py-3 rounded-xl text-sm font-semibold"></div>
+
+<form class="space-y-6" id="appointmentForm">
+<!-- Name -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface" for="full_name">Full Name</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-xl">person</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface transition-all outline-none" id="full_name" name="full_name" placeholder="Enter your full name" required="" type="text"/>
+</div>
+</div>
+<!-- Phone -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface" for="phone">Phone Number</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-xl">call</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface transition-all outline-none" id="phone" name="phone" placeholder="+92 300 0000000" required="" type="tel"/>
+</div>
+</div>
+<!-- Service Dropdown -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface" for="service">Service Needed</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-xl">medical_services</span>
+<select class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface transition-all outline-none appearance-none" id="service" name="service" required="">
+<option disabled="" selected="" value="">Select a service</option>
+<option value="General Dental Checkup">General Dental Checkup</option>
+<option value="Teeth Whitening">Teeth Whitening</option>
+<option value="Root Canal Treatment">Root Canal Treatment</option>
+<option value="Braces &amp; Orthodontics">Braces &amp; Orthodontics</option>
+<option value="Pediatric Dental Care">Pediatric Dental Care</option>
+<option value="General Medical Consultation">General Medical Consultation</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Date -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface" for="date">Preferred Date</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-xl">calendar_today</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface transition-all outline-none" id="date" name="date" required="" type="date"/>
+</div>
+</div>
+<!-- Time -->
+<div class="space-y-2">
+<label class="block font-label-md text-on-surface" for="time">Preferred Time</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-xl">schedule</span>
+<select class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary bg-surface transition-all outline-none appearance-none" id="time" name="time" required="">
+<option disabled="" selected="" value="">Select a slot</option>
+<option value="10AM-12PM">10:00 AM - 12:00 PM</option>
+<option value="12PM-2PM">12:00 PM - 02:00 PM</option>
+<option value="5PM-7PM">05:00 PM - 07:00 PM</option>
+<option value="7PM-9PM">07:00 PM - 09:00 PM</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Note -->
+<div class="p-4 rounded-lg bg-surface-container-high border-l-4 border-secondary text-on-surface-variant text-caption flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-1">info</span>
+<span>Reminder: Our clinic is located at <strong>Loha Market Rd, Multan</strong>. Please arrive 10 minutes prior to your selected time slot for check-in.</span>
+</div>
+<!-- Submit -->
+<button class="btn-book-cta w-full py-5 rounded-xl font-display font-bold text-headline-md active:scale-[0.98] transition-all shadow-md flex items-center justify-center gap-3" type="submit" id="bookingSubmitBtn">
+<span id="bookingSubmitLabel">Request Appointment</span>
+<span class="material-symbols-outlined" id="bookingSubmitIcon">send</span>
+</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON) -->
+<footer class="w-full px-margin-desktop py-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto bg-surface-container-high border-t border-outline-variant">
+<div class="space-y-4">
+<h4 class="font-display text-headline-md font-bold text-on-surface">FM&amp;DC Multan</h4>
+<p class="font-body-md text-on-surface-variant">© 2026 Family Medical And Dental Care Multan. Honest Care, Healthy Smiles.</p>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-md text-secondary font-semibold uppercase">Contact</h5>
+<ul class="space-y-2 text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                    Loha Market Rd, Multan
+                </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                    Mon-Sat: 10AM-2PM, 5PM-9PM
+                </li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-md text-secondary font-semibold uppercase">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a></li>
+</ul>
+</div>
+</footer>
+<!-- BottomNavBar (From JSON) - Mobile Only -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 md:hidden bg-surface-container-lowest shadow-lg rounded-t-xl border-t border-outline-variant/10">
+<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a href="services.html" class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">medical_services</span>
+<span class="font-label-md text-label-md">Services</span>
+</a>
+<a href="book.html" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label-md text-label-md">Book</span>
+</a>
+<a href="contact.html" class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-label-md text-label-md">Contact</span>
+</a>
+</nav>
+<script>
+  // Change this if your backend runs somewhere other than localhost:5000
+  const API_BASE_URL = 'http://localhost:5000';
+
+  const appointmentForm = document.getElementById('appointmentForm');
+  const feedbackBox = document.getElementById('bookingFeedback');
+  const submitBtn = document.getElementById('bookingSubmitBtn');
+  const submitLabel = document.getElementById('bookingSubmitLabel');
+  const submitIcon = document.getElementById('bookingSubmitIcon');
+
+  function showFeedback(message, type) {
+    feedbackBox.textContent = message;
+    feedbackBox.classList.remove('hidden', 'bg-secondary-container', 'text-on-secondary-container', 'bg-error-container', 'text-error');
+    if (type === 'success') {
+      feedbackBox.classList.add('bg-secondary-container', 'text-on-secondary-container');
+    } else {
+      feedbackBox.classList.add('bg-error-container', 'text-error');
+    }
+    feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  appointmentForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const payload = {
+      full_name: document.getElementById('full_name').value.trim(),
+      phone_number: document.getElementById('phone').value.trim(),
+      service_type: document.getElementById('service').value,
+      preferred_date: document.getElementById('date').value,
+      time_slot: document.getElementById('time').value
+    };
+
+    // Visual feedback while sending
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-80');
+    submitLabel.textContent = 'Processing...';
+    submitIcon.textContent = 'sync';
+    submitIcon.classList.add('animate-spin');
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/v1/appointments`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        showFeedback(result.message || 'Appointment request submitted successfully.', 'success');
+        appointmentForm.reset();
+      } else {
+        // Covers validation errors (400), double-booking (409), etc.
+        showFeedback(result.error || 'Something went wrong. Please try again.', 'error');
+      }
+    } catch (err) {
+      showFeedback('Could not reach the server. Please check your connection and try again.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-80');
+      submitLabel.textContent = 'Request Appointment';
+      submitIcon.textContent = 'send';
+      submitIcon.classList.remove('animate-spin');
+    }
+  });
+
+  // Scroll-reveal: fade + rise elements into view as the user scrolls.
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body></html>
