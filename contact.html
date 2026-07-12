@@ -141,18 +141,19 @@
   </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
 <!-- Header / TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none">
-<div class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none gap-3">
+<div class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform shrink-0">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="dentistry">dentistry</span>
-<h1 class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Family Medical And Dental Care</h1>
+<h1 class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim hidden sm:block">Family Medical And Dental Care</h1>
+<h1 class="font-display text-headline-md font-bold text-primary sm:hidden">FMDC</h1>
 </div>
 <nav class="hidden md:flex items-center gap-8">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="services.html">Services</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="about.html">About</a>
 <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary transition-colors" href="contact.html">Contact</a>
-<button onclick="window.location='book.html'" class="btn-book-cta px-6 py-2 rounded-full font-bold active:scale-95">Book Appointment</button>
 </nav>
+<button onclick="window.location='book.html'" class="btn-book-cta px-4 md:px-6 py-2 rounded-full font-bold active:scale-95 shrink-0 text-sm md:text-base">Book Appointment</button>
 </header>
 
 <main class="pt-24 pb-20">

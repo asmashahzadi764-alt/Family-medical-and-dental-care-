@@ -148,18 +148,19 @@
   </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface shadow-sm dark:shadow-none glass-header">
-<div class="flex items-center gap-base">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface shadow-sm dark:shadow-none glass-header gap-3">
+<div class="flex items-center gap-base shrink-0">
 <span class="material-symbols-outlined text-primary text-headline-md" data-icon="dentistry">dentistry</span>
-<h1 class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Family Medical And Dental Care</h1>
+<h1 class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim hidden sm:block">Family Medical And Dental Care</h1>
+<h1 class="font-display text-headline-md font-bold text-primary sm:hidden">FMDC</h1>
 </div>
 <nav class="hidden md:flex items-center gap-gutter">
 <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="index.html">Home</a>
 <a class="text-primary font-bold border-b-2 border-primary hover:text-secondary transition-colors font-label-md text-label-md" href="services.html">Services</a>
 <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="about.html">About</a>
 <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="contact.html">Contact</a>
-<button onclick="window.location='book.html'" class="btn-book-cta px-6 py-2 rounded-full font-label-md active:scale-95">Book Appointment</button>
 </nav>
+<button onclick="window.location='book.html'" class="btn-book-cta px-4 md:px-6 py-2 rounded-full font-label-md active:scale-95 shrink-0 text-sm md:text-base">Book Appointment</button>
 </header>
 <main class="pt-32 pb-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <!-- Hero Section -->
@@ -280,22 +281,22 @@
 </footer>
 <!-- BottomNavBar (Mobile Only) -->
 <nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 md:hidden bg-surface-container-lowest shadow-lg rounded-t-xl">
-<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md">
+<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md active:scale-90 transition-transform">
 <span class="material-symbols-outlined" data-icon="home">home</span>
 <span>Home</span>
-</div>
-<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 font-label-md text-label-md">
+</a>
+<a href="services.html" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 font-label-md text-label-md active:scale-90 transition-transform">
 <span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
 <span>Services</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md">
+</a>
+<a href="about.html" class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md active:scale-90 transition-transform">
 <span class="material-symbols-outlined" data-icon="info">info</span>
 <span>About</span>
-</div>
-<div class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md">
+</a>
+<a href="contact.html" class="flex flex-col items-center justify-center text-on-surface-variant font-label-md text-label-md active:scale-90 transition-transform">
 <span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
 <span>Contact</span>
-</div>
+</a>
 </nav>
 <script>
         // Simple scroll effect for header

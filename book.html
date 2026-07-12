@@ -150,10 +150,11 @@
   </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
 <!-- TopAppBar (From JSON) -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface shadow-sm transition-all duration-300">
-<div class="flex items-center gap-3">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface shadow-sm transition-all duration-300 gap-3">
+<div class="flex items-center gap-3 shrink-0">
 <span class="material-symbols-outlined text-primary text-3xl">dentistry</span>
-<h1 class="font-display text-headline-md font-bold text-primary">Family Medical And Dental Care</h1>
+<h1 class="font-display text-headline-md font-bold text-primary hidden sm:block">Family Medical And Dental Care</h1>
+<h1 class="font-display text-headline-md font-bold text-primary sm:hidden">FMDC</h1>
 </div>
 <nav class="hidden md:flex gap-8 items-center">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a>
@@ -161,9 +162,6 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="about.html">About</a>
 <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary cursor-pointer active:scale-95 transition-transform" href="book.html">Book Appointment</a>
 </nav>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
 </header>
 <main class="flex-grow pt-24 pb-16">
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-12 gap-gutter items-start">
@@ -329,9 +327,9 @@
 <span class="material-symbols-outlined">medical_services</span>
 <span class="font-label-md text-label-md">Services</span>
 </a>
-<a href="book.html" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-transform">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
-<span class="font-label-md text-label-md">Book</span>
+<a href="about.html" class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-md text-label-md">About</span>
 </a>
 <a href="contact.html" class="flex flex-col items-center justify-center text-on-surface-variant active:scale-90 transition-transform">
 <span class="material-symbols-outlined">contact_support</span>

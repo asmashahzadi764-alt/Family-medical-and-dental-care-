@@ -154,8 +154,8 @@
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
 <!-- TopAppBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface shadow-sm transition-all duration-300" id="main-nav">
-<div class="flex items-center gap-3 cursor-pointer active:scale-95 transition-transform">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface shadow-sm transition-all duration-300 gap-3" id="main-nav">
+<div class="flex items-center gap-3 cursor-pointer active:scale-95 transition-transform shrink-0">
 <span class="material-symbols-outlined text-primary text-3xl" data-icon="dentistry">dentistry</span>
 <span class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim hidden sm:block">Family Medical And Dental Care</span>
 <span class="font-display text-headline-md font-bold text-primary sm:hidden">FMDC</span>
@@ -166,7 +166,7 @@
 <a class="text-on-surface-variant font-label-md text-label-md cursor-pointer hover:text-secondary transition-colors" href="about.html">About</a>
 <a class="text-on-surface-variant font-label-md text-label-md cursor-pointer hover:text-secondary transition-colors" href="contact.html">Contact</a>
 </div>
-<button onclick="window.location='book.html'" class="btn-book-cta rounded-full px-6 py-2 font-display font-bold shadow-sm text-label-md">
+<button onclick="window.location='book.html'" class="btn-book-cta rounded-full px-4 md:px-6 py-2 font-display font-bold shadow-sm text-sm md:text-base shrink-0">
             Book Appointment
         </button>
 </nav>
@@ -487,14 +487,18 @@
         });
 
         // Scroll-reveal: fade + rise elements into view as the user scrolls.
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('reveal-visible'));
+        }
     </script>
 </body></html>
