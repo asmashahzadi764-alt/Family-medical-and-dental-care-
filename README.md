@@ -22,7 +22,8 @@ built for a family dental & medical clinic in Multan, Pakistan.
 | **Tagline** | "Honest Care, Healthy Smiles." |
 | **Location** | Loha Market Rd, Kiri Dawood Khan, Multan, Punjab, Pakistan |
 | **Hours** | Mon–Sat: 10:00 AM–2:00 PM & 5:00 PM–9:00 PM · Closed Sundays |
-| **Phone** | +92 300 0000000 *(placeholder — replace with the real clinic number)* |
+| **Phone** | +92 301 7483133 |
+| **Email** | arifsiddiqui1526@yahoo.com |
 | **Specialty** | Conservative, tooth-saving dentistry combined with general medical consultations under one roof |
 
 ---
@@ -35,6 +36,8 @@ built for a family dental & medical clinic in Multan, Pakistan.
   validation (no Sunday bookings, no past dates, no double-booked slots,
   Pakistani phone number format enforced)
 - Send a general inquiry through a contact form
+- Reach the clinic directly by phone, email, or a one-tap WhatsApp button
+  (present on every page)
 - Fully responsive — works smoothly on mobile, including a dedicated
   bottom navigation bar
 
